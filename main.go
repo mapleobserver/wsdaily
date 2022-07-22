@@ -1,9 +1,9 @@
 /*
  * @Description: 武神活跃号日常
- * @Author: benz1
+ * @Author: benz1,MapleO
  * @Date: 2021-12-29 16:10:57
- * @LastEditTime: 2022-01-06 14:42:06
- * @LastEditors: benz1
+ * @LastEditTime: 2022-07-22 16:54:06
+ * @LastEditors: MapleO
  * @Reference:
  */
 
@@ -930,7 +930,8 @@ Loop:
 							succlock.Lock()
 							succ = succ + 1
 							succlock.Unlock()
-							log4go(name, "INFO").Println(`日常任务完成`)
+							log4go(name, "INFO").Println(`日常任务完成，开始送花`)
+							write(ws, `greet 99`)
 							if strings.Contains(level, "武帝") || strings.Contains(level, "武神") {
 								write(ws, `tm 回家自闭,jh fam 0 start,go west,go west,go north,go enter,go west,xiulian`)
 							} else {
